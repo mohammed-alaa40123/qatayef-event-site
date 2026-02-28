@@ -356,15 +356,16 @@ export default function Home() {
     setIsSubmitting(true);
 
     try {
-      const formBody = new FormData();
-      formBody.append("name", formData.name);
-      formBody.append("email", formData.email);
-      formBody.append("phone", formData.phone);
-      formBody.append("university", formData.university);
-      formBody.append("position", formData.position);
-      formBody.append("ieeeStatus", formData.ieeeStatus || "N/A");
-      formBody.append("ieeeMembershipId", formData.ieeeMembershipId || "N/A");
-      formBody.append("resumeUrl", formData.resumeUrl || "N/A");
+      const formBody = new URLSearchParams({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        university: formData.university,
+        position: formData.position,
+        ieeeStatus: formData.ieeeStatus || "N/A",
+        ieeeMembershipId: formData.ieeeMembershipId || "N/A",
+        resumeUrl: formData.resumeUrl || "N/A",
+      });
 
       await fetch(
         "https://script.google.com/macros/s/AKfycbxAF7Tb8VRJmrII_8OzdBmv3a49Ver8x5YKvUBmYlq2A5tw5z9QJFnXsK_Z4B3Olec/exec",
