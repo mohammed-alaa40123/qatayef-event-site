@@ -71,6 +71,14 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/abdelrahman-hafrag.jpg",
         isPending: true,
       },
+      {
+        name: "Omar Nabil",
+        role: "Senior AI Researcher & Founder",
+        company: "Namaa Community",
+        country: "🇪🇬 Egypt",
+        linkedinUrl: "https://www.linkedin.com/in/omarnj/",
+        imageUrl: "/images/speakers/omar-nj.jpg",
+      },
     ],
   },
   {
