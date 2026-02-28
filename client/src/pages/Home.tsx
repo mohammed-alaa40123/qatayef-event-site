@@ -131,7 +131,7 @@ const schedule: DaySchedule[] = [
     speakers: [
       {
         name: "Dr. Marwa El Hefnawy",
-        role: "AI and 5G/6G System Engineering Expert",
+        role: "5G/6G System Engineering Expert",
         company: "Apple, Intel, Huawei",
         country: "🇪🇬 Egypt",
         linkedinUrl: "https://de.linkedin.com/in/marwa-el-hefnawy-ph-d-43407639",
