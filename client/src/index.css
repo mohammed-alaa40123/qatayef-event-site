@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* QatAIyef Brand Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lora:wght@400;500;600&display=swap');
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -43,39 +46,46 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
+  /* QatAIyef Brand Colors */
+  --maroon: #631616;
+  --gold: #B58D53;
+  --cream: #FDF0C4;
+  --dark-brown: #3D2317;
+  --burnt-orange: #96542E;
+  
+  --primary: #631616;
+  --primary-foreground: #FDF0C4;
+  --sidebar-primary: #631616;
+  --sidebar-primary-foreground: #FDF0C4;
+  --chart-1: #B58D53;
+  --chart-2: #96542E;
+  --chart-3: #631616;
+  --chart-4: #3D2317;
+  --chart-5: #8B5A3C;
   --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --background: #FDF0C4;
+  --foreground: #3D2317;
+  --card: #FFFFFF;
+  --card-foreground: #3D2317;
+  --popover: #FFFFFF;
+  --popover-foreground: #3D2317;
+  --secondary: #B58D53;
+  --secondary-foreground: #FFFFFF;
+  --muted: #E8DCC8;
+  --muted-foreground: #8B7355;
+  --accent: #631616;
+  --accent-foreground: #FDF0C4;
+  --destructive: #DC2626;
+  --destructive-foreground: #FDF0C4;
+  --border: #E8DCC8;
+  --input: #FFFFFF;
+  --ring: #B58D53;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #3D2317;
+  --sidebar-accent: #631616;
+  --sidebar-accent-foreground: #FDF0C4;
+  --sidebar-border: #E8DCC8;
+  --sidebar-ring: #B58D53;
 }
 
 .dark {
@@ -119,6 +129,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Lora', serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -174,4 +190,118 @@
       max-width: 1280px; /* Standard content width */
     }
   }
+}
+/* QatAIyef Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* QatAIyef Color Utilities */
+.text-maroon {
+  color: #631616;
+}
+
+.text-gold {
+  color: #B58D53;
+}
+
+.text-dark-brown {
+  color: #3D2317;
+}
+
+.text-burnt-orange {
+  color: #96542E;
+}
+
+.bg-maroon {
+  background-color: #631616;
+}
+
+.bg-gold {
+  background-color: #B58D53;
+}
+
+.bg-cream {
+  background-color: #FDF0C4;
+}
+
+.bg-dark-brown {
+  background-color: #3D2317;
+}
+
+.border-gold {
+  border-color: #B58D53;
+}
+
+.border-gold\/20 {
+  border-color: rgba(181, 141, 83, 0.2);
+}
+
+.border-gold\/30 {
+  border-color: rgba(181, 141, 83, 0.3);
+}
+
+/* Hover States */
+.hover\:text-gold:hover {
+  color: #B58D53;
+}
+
+.hover\:text-maroon:hover {
+  color: #631616;
+}
+
+.hover\:bg-maroon\/5:hover {
+  background-color: rgba(99, 22, 22, 0.05);
+}
+
+.hover\:bg-gold\/10:hover {
+  background-color: rgba(181, 141, 83, 0.1);
+}
+
+.hover\:bg-maroon\/90:hover {
+  background-color: rgba(99, 22, 22, 0.9);
+}
+
+/* Focus States */
+.focus\:border-gold:focus {
+  border-color: #B58D53;
+}
+
+.focus\:ring-gold:focus {
+  --tw-ring-color: #B58D53;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Smooth Transitions */
+button, a, input, select, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  color: #631616;
 }
