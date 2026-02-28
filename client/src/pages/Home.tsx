@@ -226,9 +226,9 @@ function FloatingDecoration({ src, className, duration = 6, delay = 0 }: { src: 
 /* ───── Speaker avatar with golden frame ───── */
 function SpeakerAvatar({ speaker, size = "md" }: { speaker: Speaker; size?: "sm" | "md" | "lg" }) {
   const sizeClasses = {
-    sm: "w-14 h-14",
-    md: "w-20 h-20",
-    lg: "w-28 h-28",
+    sm: "w-20 h-20",
+    md: "w-28 h-28",
+    lg: "w-36 h-36",
   };
   const initials = speaker.name
     .split(" ")
@@ -250,7 +250,7 @@ function SpeakerAvatar({ speaker, size = "md" }: { speaker: Speaker; size?: "sm"
         />
       ) : null}
       <div
-        className={`${speaker.imageUrl ? "hidden" : ""} w-full h-full bg-gradient-to-br from-[#B58D53] to-[#96542E] flex items-center justify-center text-white font-bold ${size === "lg" ? "text-xl" : size === "md" ? "text-base" : "text-sm"}`}
+        className={`${speaker.imageUrl ? "hidden" : ""} w-full h-full bg-gradient-to-br from-[#B58D53] to-[#96542E] flex items-center justify-center text-white font-bold ${size === "lg" ? "text-3xl" : size === "md" ? "text-xl" : "text-base"}`}
       >
         {initials}
       </div>
@@ -402,7 +402,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/images/brand/qataiyef-logo-circle.png"
+              src="/images/brand/qataiyef-logo.jpeg"
               alt="QatAIyef Logo"
               className="h-11 w-11 rounded-full ring-2 ring-[#B58D53]/50 object-cover"
             />
@@ -693,69 +693,117 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <div className="space-y-6 max-w-5xl mx-auto">
+          <div className="space-y-8 max-w-5xl mx-auto">
             {schedule.map((daySchedule, index) => (
               <AnimatedSection key={index} delay={index * 0.08}>
-                <div className="group relative bg-gradient-to-r from-[#3D2317] to-[#3D2317]/80 rounded-xl overflow-hidden border border-[#B58D53]/15 hover:border-[#B58D53]/40 transition-all duration-500 hover:shadow-xl hover:shadow-[#B58D53]/10">
-                  {/* Gold accent bar */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#B58D53] to-[#96542E]" />
+                {daySchedule.isPanel ? (
+                  /* ──── PANEL DISCUSSION CARD ──── */
+                  <div className="group relative rounded-2xl overflow-hidden border-2 border-[#B58D53]/30 hover:border-[#B58D53]/60 transition-all duration-500 hover:shadow-2xl hover:shadow-[#B58D53]/15" style={{ background: "linear-gradient(135deg, #3D2317 0%, #2A0F0F 50%, #631616/40 100%)" }}>
+                    {/* Top gold accent bar */}
+                    <div className="h-1.5 bg-gradient-to-r from-[#B58D53] via-[#FDF0C4] to-[#B58D53]" />
 
-                  <div className="p-6 md:p-8">
-                    <div className="flex flex-col md:flex-row gap-6">
-                      {/* Speaker photo(s) - LEFT side */}
-                      <div className="flex md:flex-col items-center gap-3 md:min-w-[100px]">
-                        {daySchedule.speakers.map((speaker, si) => (
-                          <SpeakerAvatar key={si} speaker={speaker} size={daySchedule.isPanel ? "sm" : "lg"} />
-                        ))}
+                    <div className="p-8">
+                      {/* Panel header */}
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
+                        <span className="inline-flex items-center gap-2 bg-gradient-to-r from-[#B58D53] to-[#96542E] text-[#3D2317] px-5 py-2 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg">
+                          <img src="/images/decorations/moon.png" alt="" className="w-4 h-4" />
+                          Night {daySchedule.day}
+                        </span>
+                        <span className="text-[#B58D53]/80 text-sm">{daySchedule.date}</span>
+                        <span className="inline-flex items-center gap-1.5 bg-[#FDF0C4]/10 border border-[#B58D53]/40 text-[#FDF0C4] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                          <Users className="w-3.5 h-3.5" />
+                          Panel Discussion
+                        </span>
                       </div>
 
-                      {/* Content - RIGHT side */}
-                      <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-3 mb-3">
-                          <span className="inline-flex items-center gap-1.5 bg-[#B58D53] text-[#3D2317] px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider">
-                            <img src="/images/decorations/moon.png" alt="" className="w-3.5 h-3.5" />
-                            Night {daySchedule.day}
-                          </span>
-                          <span className="text-[#B58D53]/80 text-sm">{daySchedule.date}</span>
-                          {daySchedule.isPanel && (
-                            <span className="inline-block bg-[#631616] border border-[#B58D53]/30 text-[#B58D53] px-3 py-1 rounded-full text-xs font-bold uppercase">
-                              Panel
-                            </span>
-                          )}
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#FDF0C4] mb-3 group-hover:text-[#B58D53] transition-colors">
+                        {daySchedule.title}
+                      </h3>
+                      <p className="text-[#FDF0C4]/60 text-sm mb-8 leading-relaxed max-w-3xl">{daySchedule.description}</p>
+
+                      {/* Panel speakers grid */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {daySchedule.speakers.map((speaker, si) => (
+                          <a
+                            key={si}
+                            href={speaker.linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-4 p-4 bg-[#2A0F0F]/60 rounded-xl border border-[#B58D53]/10 hover:border-[#B58D53]/40 hover:bg-[#2A0F0F]/80 transition-all group/card hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#B58D53]/10"
+                          >
+                            <SpeakerAvatar speaker={speaker} size="md" />
+                            <div className="flex-1 min-w-0">
+                              <p className="font-bold text-[#FDF0C4] group-hover/card:text-[#B58D53] transition-colors truncate">
+                                {speaker.name}
+                              </p>
+                              <p className="text-xs text-[#B58D53] mt-0.5">{speaker.role}</p>
+                              <p className="text-xs text-[#FDF0C4]/40 mt-0.5">{speaker.company}</p>
+                              <p className="text-xs text-[#FDF0C4]/30">{speaker.country}</p>
+                            </div>
+                            <ExternalLink className="w-4 h-4 text-[#B58D53]/40 group-hover/card:text-[#B58D53] transition-colors flex-shrink-0" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  /* ──── REGULAR SESSION CARD ──── */
+                  <div className="group relative bg-gradient-to-r from-[#3D2317] to-[#3D2317]/80 rounded-xl overflow-hidden border border-[#B58D53]/15 hover:border-[#B58D53]/40 transition-all duration-500 hover:shadow-xl hover:shadow-[#B58D53]/10">
+                    {/* Gold accent bar */}
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#B58D53] to-[#96542E]" />
+
+                    <div className="p-6 md:p-8">
+                      <div className="flex flex-col md:flex-row gap-6">
+                        {/* Speaker photo - LEFT side */}
+                        <div className="flex md:flex-col items-center gap-3 md:min-w-[160px]">
+                          {daySchedule.speakers.map((speaker, si) => (
+                            <SpeakerAvatar key={si} speaker={speaker} size="lg" />
+                          ))}
                         </div>
 
-                        <h3 className="text-xl md:text-2xl font-bold text-[#FDF0C4] mb-2 group-hover:text-[#B58D53] transition-colors">
-                          {daySchedule.title}
-                        </h3>
-                        <p className="text-[#FDF0C4]/60 text-sm mb-4 leading-relaxed">{daySchedule.description}</p>
+                        {/* Content - RIGHT side */}
+                        <div className="flex-1">
+                          <div className="flex flex-wrap items-center gap-3 mb-3">
+                            <span className="inline-flex items-center gap-1.5 bg-[#B58D53] text-[#3D2317] px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider">
+                              <img src="/images/decorations/moon.png" alt="" className="w-3.5 h-3.5" />
+                              Night {daySchedule.day}
+                            </span>
+                            <span className="text-[#B58D53]/80 text-sm">{daySchedule.date}</span>
+                          </div>
 
-                        {/* Speaker info */}
-                        <div className="flex flex-wrap gap-4">
-                          {daySchedule.speakers.map((speaker, si) => (
-                            <a
-                              key={si}
-                              href={speaker.linkedinUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 px-3 py-2 bg-[#2A0F0F]/60 rounded-lg hover:bg-[#B58D53]/10 transition-colors group/link"
-                            >
-                              <div>
-                                <p className="text-sm font-semibold text-[#FDF0C4] group-hover/link:text-[#B58D53] transition-colors">
-                                  {speaker.name}
-                                </p>
-                                <p className="text-xs text-[#FDF0C4]/50">
-                                  {speaker.role} • {speaker.company}
-                                </p>
-                                <p className="text-xs text-[#B58D53]/70">{speaker.country}</p>
-                              </div>
-                              <ExternalLink className="w-4 h-4 text-[#B58D53]/50 group-hover/link:text-[#B58D53] transition-colors flex-shrink-0" />
-                            </a>
-                          ))}
+                          <h3 className="text-xl md:text-2xl font-bold text-[#FDF0C4] mb-2 group-hover:text-[#B58D53] transition-colors">
+                            {daySchedule.title}
+                          </h3>
+                          <p className="text-[#FDF0C4]/60 text-sm mb-4 leading-relaxed">{daySchedule.description}</p>
+
+                          {/* Speaker info */}
+                          <div className="flex flex-wrap gap-4">
+                            {daySchedule.speakers.map((speaker, si) => (
+                              <a
+                                key={si}
+                                href={speaker.linkedinUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-2 bg-[#2A0F0F]/60 rounded-lg hover:bg-[#B58D53]/10 transition-colors group/link"
+                              >
+                                <div>
+                                  <p className="text-sm font-semibold text-[#FDF0C4] group-hover/link:text-[#B58D53] transition-colors">
+                                    {speaker.name}
+                                  </p>
+                                  <p className="text-xs text-[#FDF0C4]/50">
+                                    {speaker.role} • {speaker.company}
+                                  </p>
+                                  <p className="text-xs text-[#B58D53]/70">{speaker.country}</p>
+                                </div>
+                                <ExternalLink className="w-4 h-4 text-[#B58D53]/50 group-hover/link:text-[#B58D53] transition-colors flex-shrink-0" />
+                              </a>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
               </AnimatedSection>
             ))}
           </div>

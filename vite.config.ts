@@ -152,9 +152,8 @@ function vitePluginManusDebugCollector(): Plugin {
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
-export default defineConfig(({ command }) => ({
+export default defineConfig({
   plugins,
-  base: command === 'build' ? '/qatayef-event-site/' : '/',
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -186,4 +185,4 @@ export default defineConfig(({ command }) => ({
       deny: ["**/.*"],
     },
   },
-}));
+});
