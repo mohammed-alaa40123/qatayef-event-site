@@ -366,7 +366,9 @@ export default function Home() {
     setIsSubmitting(true);
 
     try {
-      const formBody = new URLSearchParams({
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAF7Tb8VRJmrII_8OzdBmv3a49Ver8x5YKvUBmYlq2A5tw5z9QJFnXsK_Z4B3Olec/exec";
+
+      const fields: Record<string, string> = {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -375,16 +377,37 @@ export default function Home() {
         ieeeStatus: formData.ieeeStatus || "N/A",
         ieeeMembershipId: formData.ieeeMembershipId || "N/A",
         resumeUrl: formData.resumeUrl || "N/A",
-      });
+      };
 
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbxAF7Tb8VRJmrII_8OzdBmv3a49Ver8x5YKvUBmYlq2A5tw5z9QJFnXsK_Z4B3Olec/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: formBody,
-        }
-      );
+      // Use hidden form + iframe to bypass CORS entirely
+      const iframeName = "gs-iframe-" + Date.now();
+      const iframe = document.createElement("iframe");
+      iframe.name = iframeName;
+      iframe.style.display = "none";
+      document.body.appendChild(iframe);
+
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = SCRIPT_URL;
+      form.target = iframeName;
+      form.style.display = "none";
+
+      for (const [key, value] of Object.entries(fields)) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+      }
+
+      document.body.appendChild(form);
+      form.submit();
+
+      // Cleanup after submission
+      setTimeout(() => {
+        form.remove();
+        iframe.remove();
+      }, 5000);
 
       toast.success("Registration submitted successfully! We'll be in touch soon. 🎉");
       setFormData({
