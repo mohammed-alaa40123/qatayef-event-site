@@ -63,19 +63,10 @@ const schedule: DaySchedule[] = [
       "Master Retrieval-Augmented Generation with practical methodologies for integrating LLMs with private datasets and building scalable retrieval pipelines.",
     speakers: [
       {
-        name: "Pending Confirmation",
-        role: "AI Engineer",
-        company: "Pending",
-        country: "",
-        linkedinUrl: "",
-        imageUrl: "/images/speakers/abdelrahman-hafrag.jpg",
-        isPending: true,
-      },
-      {
-        name: "Omar Nabil",
+        name: "Omer Nacar",
         role: "Senior AI Researcher & Founder",
         company: "Namaa Community",
-        country: "🇪🇬 Egypt",
+        country: "🇸🇦 Saudi Arabia",
         linkedinUrl: "https://www.linkedin.com/in/omarnj/",
         imageUrl: "/images/speakers/omar-nj.jpg",
       },
