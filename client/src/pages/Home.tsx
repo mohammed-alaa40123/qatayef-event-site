@@ -25,6 +25,7 @@ interface Speaker {
   country: string;
   linkedinUrl: string;
   imageUrl?: string;
+  isPending?: boolean;
 }
 
 interface DaySchedule {
@@ -62,12 +63,13 @@ const schedule: DaySchedule[] = [
       "Master Retrieval-Augmented Generation with practical methodologies for integrating LLMs with private datasets and building scalable retrieval pipelines.",
     speakers: [
       {
-        name: "Abdelrahman Hafrag",
-        role: "Co-Founder",
-        company: "Almach AI",
-        country: "🇺🇸 United States",
+        name: "Pending Confirmation",
+        role: "AI Engineer",
+        company: "Pending",
+        country: "",
         linkedinUrl: "https://www.linkedin.com/in/abdulhafrag/",
         imageUrl: "/images/speakers/abdelrahman-hafrag.jpg",
+        isPending: true,
       },
     ],
   },
@@ -146,12 +148,13 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/omar-samir.jpg",
       },
       {
-        name: "Ayman Saber",
+        name: "Pending",
         role: "GenAI Engineer",
         company: "VOIS",
         country: "🇪🇬 Egypt",
-        linkedinUrl: "https://eg.linkedin.com/in/ayrosa",
+        linkedinUrl: "#",
         imageUrl: "/images/speakers/ayman-saber.jpg",
+        isPending: true,
       },
     ],
     isPanel: true,
@@ -178,6 +181,14 @@ const schedule: DaySchedule[] = [
         country: "🇪🇬 Egypt",
         linkedinUrl: "https://be.linkedin.com/in/ahmedabdelhamid",
         imageUrl: "/images/speakers/ahmed-abdelhamid.jpg",
+      },
+      {
+        name: "Mo Fattah",
+        role: "Founder & CEO",
+        company: "",
+        country: "🇪🇬 Egypt",
+        linkedinUrl: "https://www.linkedin.com/in/mo-fattah-bb1234160",
+        imageUrl: "/images/speakers/mo-fattah.jpg",
       },
     ],
     isPanel: true,
@@ -237,12 +248,12 @@ function SpeakerAvatar({ speaker, size = "md" }: { speaker: Speaker; size?: "sm"
     .slice(0, 2);
 
   return (
-    <div className={`${sizeClasses[size]} rounded-full ring-3 ring-[#B58D53] ring-offset-2 ring-offset-[#631616] overflow-hidden flex-shrink-0`}>
+    <div className={`${sizeClasses[size]} rounded-full ring-3 ring-[#B58D53] ring-offset-2 ring-offset-[#631616] overflow-hidden flex-shrink-0 ${speaker.isPending ? 'opacity-70' : ''}`}>
       {speaker.imageUrl ? (
         <img
           src={speaker.imageUrl}
           alt={speaker.name}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover ${speaker.isPending ? 'blur-sm grayscale' : ''}`}
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = "none";
             (e.target as HTMLImageElement).nextElementSibling?.classList.remove("hidden");
