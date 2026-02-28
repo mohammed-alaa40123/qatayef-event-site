@@ -368,7 +368,7 @@ export default function Home() {
     try {
       const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAF7Tb8VRJmrII_8OzdBmv3a49Ver8x5YKvUBmYlq2A5tw5z9QJFnXsK_Z4B3Olec/exec";
 
-      const fields: Record<string, string> = {
+      const params = new URLSearchParams({
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -377,37 +377,17 @@ export default function Home() {
         ieeeStatus: formData.ieeeStatus || "N/A",
         ieeeMembershipId: formData.ieeeMembershipId || "N/A",
         resumeUrl: formData.resumeUrl || "N/A",
-      };
+      });
 
-      // Use hidden form + iframe to bypass CORS entirely
-      const iframeName = "gs-iframe-" + Date.now();
-      const iframe = document.createElement("iframe");
-      iframe.name = iframeName;
-      iframe.style.display = "none";
-      document.body.appendChild(iframe);
-
-      const form = document.createElement("form");
-      form.method = "POST";
-      form.action = SCRIPT_URL;
-      form.target = iframeName;
-      form.style.display = "none";
-
-      for (const [key, value] of Object.entries(fields)) {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = value;
-        form.appendChild(input);
-      }
-
-      document.body.appendChild(form);
-      form.submit();
-
-      // Cleanup after submission
-      setTimeout(() => {
-        form.remove();
-        iframe.remove();
-      }, 5000);
+      // Use Image GET request — bypasses ALL CORS/iframe restrictions
+      await new Promise<void>((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve();
+        img.onerror = () => resolve(); // Google returns HTML, not an image — onerror still means the request was sent
+        img.src = SCRIPT_URL + "?" + params.toString();
+        // Timeout fallback — request is sent regardless
+        setTimeout(resolve, 3000);
+      });
 
       toast.success("Registration submitted successfully! We'll be in touch soon. 🎉");
       setFormData({

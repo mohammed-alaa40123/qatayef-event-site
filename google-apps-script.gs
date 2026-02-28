@@ -1,31 +1,36 @@
 /**
  * QatAIyef: AI Engineering Nights - Google Apps Script
- * This script handles form submissions from the registration website
- * and appends them to the Google Sheet
+ * Handles both GET and POST submissions from the registration website
+ * Deploy as: Web App → Execute as: Me → Who has access: Anyone
  */
 
-// Deploy as web app with "Execute as: Me" and "Who has access: Anyone"
-// The deployment URL will be used in the website form
+function doGet(e) {
+  return handleSubmission(e);
+}
 
 function doPost(e) {
+  return handleSubmission(e);
+}
+
+function handleSubmission(e) {
   try {
-    // Get the active spreadsheet and sheet
-    const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    const sheet = spreadsheet.getSheetByName("Sheet1") || spreadsheet.getSheets()[0];
+    var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = spreadsheet.getSheetByName("Sheet1") || spreadsheet.getSheets()[0];
     
-    // Get form data from the request
-    const data = e.parameter;
+    // Get parameters from either GET or POST
+    var data = e.parameter || {};
     
-    // Create headers if they don't exist
-    const firstRow = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-    if (!firstRow || firstRow.every(cell => cell === "")) {
-      const headers = ["Timestamp", "Name", "Email", "Phone", "University", "Position", "IEEE Status", "IEEE Membership ID", "Resume URL"];
+    // Create headers if first row is empty
+    if (sheet.getLastRow() === 0) {
+      var headers = ["Timestamp", "Name", "Email", "Phone", "University", "Position", "IEEE Status", "IEEE Membership ID", "Resume URL"];
       sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
     }
     
-    // Prepare the row data
-    const timestamp = new Date().toLocaleString("en-US", { timeZone: "Africa/Cairo" });
-    const rowData = [
+    // Get Cairo timestamp
+    var timestamp = Utilities.formatDate(new Date(), "Africa/Cairo", "yyyy-MM-dd HH:mm:ss");
+    
+    // Append row
+    var rowData = [
       timestamp,
       data.name || "",
       data.email || "",
@@ -37,17 +42,15 @@ function doPost(e) {
       data.resumeUrl || ""
     ];
     
-    // Append the data to the sheet
     sheet.appendRow(rowData);
     
-    // Return success response
+    // Return success (visible for GET requests)
     return ContentService.createTextOutput(JSON.stringify({
       status: "success",
-      message: "Registration submitted successfully"
+      message: "Registration saved"
     })).setMimeType(ContentService.MimeType.JSON);
     
   } catch (error) {
-    // Return error response
     return ContentService.createTextOutput(JSON.stringify({
       status: "error",
       message: error.toString()
@@ -55,21 +58,21 @@ function doPost(e) {
   }
 }
 
-// Optional: Add a test function to verify the script works
-function testPost() {
-  const testData = {
+// Test function - run this in the script editor to verify it works
+function testSubmission() {
+  var testEvent = {
     parameter: {
       name: "Test User",
       email: "test@example.com",
       phone: "+20 123 456 7890",
       university: "Test University",
-      position: "Test Position",
-      ieeeStatus: "Student Member",
-      ieeeMembershipId: "12345678",
-      resumeUrl: "https://example.com/resume.pdf"
+      position: "Student",
+      ieeeStatus: "not-member",
+      ieeeMembershipId: "N/A",
+      resumeUrl: "N/A"
     }
   };
   
-  const result = doPost(testData);
+  var result = handleSubmission(testEvent);
   Logger.log(result.getContent());
 }
