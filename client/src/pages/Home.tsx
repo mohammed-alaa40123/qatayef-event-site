@@ -419,7 +419,21 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#2A0F0F]">
+    <div className="min-h-screen bg-[#2A0F0F] relative overflow-hidden">
+      {/* ═══════════ FLOATING DECORATIVE ICONS ═══════════ */}
+      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
+        <img src="/images/icons/tech-lantern.png" alt="" className="floating-icon drift1" style={{ top: '8%', left: '3%', width: '70px' }} />
+        <img src="/images/icons/robot-moon.png" alt="" className="floating-icon drift2" style={{ top: '15%', right: '4%', width: '80px' }} />
+        <img src="/images/icons/qatayef-plate.png" alt="" className="floating-icon drift3" style={{ top: '35%', left: '2%', width: '65px' }} />
+        <img src="/images/icons/star-circuit.png" alt="" className="floating-icon drift1" style={{ top: '50%', right: '3%', width: '60px', animationDelay: '3s' }} />
+        <img src="/images/icons/robot-lantern.png" alt="" className="floating-icon drift2" style={{ top: '65%', left: '4%', width: '70px', animationDelay: '5s' }} />
+        <img src="/images/icons/geometric-pattern.png" alt="" className="floating-icon drift3" style={{ top: '80%', right: '5%', width: '75px', animationDelay: '2s' }} />
+        <img src="/images/icons/robot-fez.png" alt="" className="floating-icon drift1" style={{ top: '45%', left: '5%', width: '55px', animationDelay: '7s' }} />
+        <img src="/images/icons/mosque-minaret.png" alt="" className="floating-icon drift2" style={{ top: '25%', right: '6%', width: '50px', animationDelay: '4s' }} />
+        <img src="/images/icons/palm-tree.png" alt="" className="floating-icon drift3" style={{ top: '72%', right: '2%', width: '58px', animationDelay: '6s' }} />
+        <img src="/images/icons/ai-chip-badge.png" alt="" className="floating-icon drift1" style={{ top: '90%', left: '6%', width: '60px', animationDelay: '8s' }} />
+      </div>
+
       {/* ═══════════════════ HEADER ═══════════════════ */}
       <header className="sticky top-0 z-50 bg-[#3D2317]/95 backdrop-blur-md border-b border-[#B58D53]/30 shadow-lg shadow-black/20">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
