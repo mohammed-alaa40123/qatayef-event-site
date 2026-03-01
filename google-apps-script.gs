@@ -104,28 +104,24 @@ function getEmailTemplate(name) {
   '<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;">' +
   '<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">' +
   
-  // HEADER with decorative icons
-  '<tr><td style="background-color: #701e1b; padding: 30px 20px; text-align: center;">' +
-  '<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>' +
-  '<td align="left" width="60"><img src="https://qataiyef-ai.vercel.app/images/icons/tech-lantern.png" alt="" width="45" style="opacity: 0.7;"></td>' +
-  '<td align="center">' +
+  // Robot qatayef on top
+  '<tr><td style="background-color: #701e1b; padding: 20px 0 0 0; text-align: center;">' +
+  '<img src="https://qataiyef-ai.vercel.app/images/icons/robot-qatayef.png" alt="" width="90" style="border-radius: 50%; border: 3px solid #fde7a7;">' +
+  '</td></tr>' +
+  
+  // HEADER
+  '<tr><td style="background-color: #701e1b; padding: 15px 20px 30px 20px; text-align: center;">' +
+  '<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="center" style="padding-bottom: 15px;">' +
   '<a href="https://www.ieee.org/" target="_blank"><img src="https://qataiyef-ai.vercel.app/images/brand/ieee-logo.jpg" alt="IEEE" width="50" style="display: inline-block; vertical-align: middle; margin: 0 6px; border-radius: 50%;"></a>' +
   '<a href="https://qataiyef-ai.vercel.app/" target="_blank"><img src="https://qataiyef-ai.vercel.app/images/brand/qataiyef-logo-circle.png" alt="QatAIyef" width="80" style="display: inline-block; vertical-align: middle; margin: 0 6px; border-radius: 50%;"></a>' +
   '<a href="https://www.computer.org/" target="_blank"><img src="https://qataiyef-ai.vercel.app/images/brand/ieee-cs-eui.png" alt="IEEE CS EUI" width="50" style="display: inline-block; vertical-align: middle; margin: 0 6px; border-radius: 50%;"></a>' +
-  '</td>' +
-  '<td align="right" width="60"><img src="https://qataiyef-ai.vercel.app/images/icons/star-circuit.png" alt="" width="45" style="opacity: 0.7;"></td>' +
-  '</tr></table>' +
-  '<h1 style="color: #fde7a7; margin: 15px 0 0 0; font-size: 28px; letter-spacing: 1px;">QatAIyef &#127769;&#10024;</h1>' +
+  '</td></tr></table>' +
+  '<h1 style="color: #fde7a7; margin: 0; font-size: 28px; letter-spacing: 1px;">QatAIyef &#127769;&#10024;</h1>' +
   '<h2 style="color: #fde7a7; margin: 5px 0 10px 0; font-size: 18px; font-weight: 400;">AI Engineering Nights</h2>' +
   '<p style="color: #fde7a7; margin: 0; font-size: 14px; line-height: 1.5; opacity: 0.85;">7 Nights &bull; March 8&ndash;14, 2026 &bull; 9:00 PM &ndash; 11:00 PM &bull; Online</p>' +
   '</td></tr>' +
   
-  // Robot mascot accent bar
-  '<tr><td style="background: linear-gradient(90deg, #701e1b 0%, #8B2500 50%, #701e1b 100%); padding: 10px 0; text-align: center;">' +
-  '<img src="https://qataiyef-ai.vercel.app/images/icons/robot-qatayef.png" alt="" width="60" style="border-radius: 50%; border: 2px solid #fde7a7;">' +
-  '</td></tr>' +
-  
-  // BODY with full email message
+  // BODY
   '<tr><td style="padding: 35px 30px; background-color: #ffffff; color: #333333; line-height: 1.7; text-align: left;">' +
   '<h3 style="color: #701e1b; margin-top: 0; font-size: 20px;">Dear ' + name + ',</h3>' +
   '<p style="margin: 0 0 16px 0;">Thank you for registering.</p>' +
@@ -133,7 +129,7 @@ function getEmailTemplate(name) {
   '<p style="margin: 0 0 16px 0;">Each evening will feature a distinct topic and speaker.</p>' +
   '<p style="margin: 0 0 16px 0;">The sessions will cover the full AI engineering lifecycle &mdash; from secure Generative AI development to entrepreneurship.</p>' +
   
-  // Schedule table with alternating rows
+  // Schedule table
   '<table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 24px 0; border-collapse: collapse; border-radius: 6px; overflow: hidden;">' +
   '<tr><td style="padding: 10px 12px; background-color: #701e1b; color: #fde7a7; font-weight: bold; font-size: 13px;" width="40%">Night</td><td style="padding: 10px 12px; background-color: #701e1b; color: #fde7a7; font-weight: bold; font-size: 13px;">Topic</td></tr>' +
   '<tr><td style="padding: 10px 12px; border-bottom: 1px solid #f0e0c0; font-size: 13px; background-color: #fdf8ef;">&#127769; Night 1 &mdash; Mar 8</td><td style="padding: 10px 12px; border-bottom: 1px solid #f0e0c0; font-size: 13px; background-color: #fdf8ef;">Build a Secure GenAI App</td></tr>' +
@@ -156,19 +152,13 @@ function getEmailTemplate(name) {
   '</div>' +
   '</td></tr>' +
   
-  // Decorative icon strip
-  '<tr><td style="background-color: #701e1b; padding: 15px 20px; text-align: center;">' +
-  '<table align="center" border="0" cellpadding="0" cellspacing="0"><tr>' +
-  '<td style="padding: 0 8px;"><img src="https://qataiyef-ai.vercel.app/images/icons/tech-lantern.png" alt="" width="35" style="opacity: 0.6;"></td>' +
-  '<td style="padding: 0 8px;"><img src="https://qataiyef-ai.vercel.app/images/icons/robot-lantern.png" alt="" width="35" style="opacity: 0.6;"></td>' +
-  '<td style="padding: 0 8px;"><img src="https://qataiyef-ai.vercel.app/images/icons/qatayef-plate.png" alt="" width="35" style="opacity: 0.6;"></td>' +
-  '<td style="padding: 0 8px;"><img src="https://qataiyef-ai.vercel.app/images/icons/robot-moon.png" alt="" width="35" style="opacity: 0.6;"></td>' +
-  '<td style="padding: 0 8px;"><img src="https://qataiyef-ai.vercel.app/images/icons/robot-fez.png" alt="" width="35" style="opacity: 0.6;"></td>' +
-  '</tr></table>' +
+  // Robot lantern at bottom
+  '<tr><td style="background-color: #701e1b; padding: 15px 0; text-align: center;">' +
+  '<img src="https://qataiyef-ai.vercel.app/images/icons/robot-lantern.png" alt="" width="80" style="border-radius: 50%; border: 3px solid #fde7a7;">' +
   '</td></tr>' +
   
   // FOOTER
-  '<tr><td style="background-color: #701e1b; padding: 20px 20px 30px 20px; text-align: center;">' +
+  '<tr><td style="background-color: #701e1b; padding: 10px 20px 30px 20px; text-align: center;">' +
   '<p style="color: #fde7a7; margin: 0 0 15px 0; font-size: 16px; font-weight: bold;">Stay Connected &#127982;</p>' +
   '<table align="center" border="0" cellpadding="0" cellspacing="0"><tr>' +
   '<td style="padding: 0 10px;"><a href="https://www.facebook.com/profile.php?id=100095148287568" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook" width="24" style="filter: invert(88%) sepia(21%) saturate(765%) hue-rotate(320deg) brightness(105%) contrast(101%);"></a></td>' +
