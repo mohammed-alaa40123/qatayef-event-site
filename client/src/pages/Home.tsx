@@ -379,24 +379,21 @@ export default function Home() {
         resumeUrl: formData.resumeUrl || "N/A",
       });
 
-      // Use fetch GET with no-cors — confirmed doGet endpoint works
+      // Use fetch GET with no-cors
       const url = SCRIPT_URL + "?" + params.toString();
 
-      // Fire multiple methods in parallel for maximum reliability
-      await Promise.race([
-        // Method 1: fetch GET with no-cors
-        fetch(url, { method: "GET", mode: "no-cors" }).catch(() => { }),
-        // Method 2: Script tag (guaranteed to fire GET)
-        new Promise<void>((resolve) => {
+      try {
+        await fetch(url, { method: "GET", mode: "no-cors" });
+      } catch {
+        // Fallback: script tag injection if fetch fails (e.g. CORS)
+        await new Promise<void>((resolve) => {
           const script = document.createElement("script");
           script.src = url;
           script.onload = () => { script.remove(); resolve(); };
-          script.onerror = () => { script.remove(); resolve(); }; // request still sent
+          script.onerror = () => { script.remove(); resolve(); };
           document.head.appendChild(script);
-        }),
-        // Timeout fallback
-        new Promise<void>((resolve) => setTimeout(resolve, 5000)),
-      ]);
+        });
+      }
 
       toast.success("Registration submitted successfully! We'll be in touch soon. 🎉");
       setFormData({
