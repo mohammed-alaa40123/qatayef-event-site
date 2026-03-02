@@ -47,8 +47,8 @@ const schedule: DaySchedule[] = [
     speakers: [
       {
         name: "Bady Ammar",
-        role: "Creative Strategist",
-        company: "Independent / Consultant",
+        role: "Co-Founder",
+        company: "stayonthetrain",
         country: "🇸🇦 Saudi Arabia",
         linkedinUrl: "https://sa.linkedin.com/in/bady-ammar",
         imageUrl: "/images/speakers/bady-ammar.jpg",
@@ -438,6 +438,7 @@ export default function Home() {
               <h1 className="text-xl font-bold text-[#FDF0C4] tracking-wide">QatAIyef</h1>
               <p className="text-[10px] text-[#B58D53] uppercase tracking-widest">AI Engineering Nights</p>
             </div>
+            <img src="/images/icons/robot-moon.png" alt="" className="h-10 w-10 rounded-full ring-1 ring-[#B58D53]/40 object-cover" />
           </div>
           <nav className="hidden md:flex gap-6 items-center">
             {[
@@ -559,20 +560,30 @@ export default function Home() {
             />
           </motion.div>
 
-          <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
-            style={{
-              background: "linear-gradient(135deg, #FDF0C4 0%, #B58D53 50%, #FDF0C4 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundSize: "200% 200%",
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            QatAIyef
-          </motion.h1>
+          <div className="flex items-center justify-center gap-3 md:gap-5">
+            <motion.h1
+              className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+              style={{
+                background: "linear-gradient(135deg, #FDF0C4 0%, #B58D53 50%, #FDF0C4 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundSize: "200% 200%",
+              }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              QatAIyef
+            </motion.h1>
+            <motion.img
+              src="/images/icons/robot-moon.png"
+              alt=""
+              className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full ring-2 ring-[#B58D53]/50 shadow-lg shadow-[#B58D53]/30"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+            />
+          </div>
 
           <motion.p
             className="text-xl md:text-2xl text-[#B58D53] mb-3 font-semibold tracking-wide"
@@ -714,11 +725,24 @@ export default function Home() {
                   Event Agenda
                 </h2>
                 <img src="/images/decorations/star-ai.png" alt="" className="w-8 h-8 opacity-70" />
+                <div className="flex items-center justify-center gap-3 md:gap-5">
+            <motion.img
+              src="/images/icons/robot-qatayef.png"
+              alt=""
+              className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full ring-2 ring-[#B58D53]/50 shadow-lg shadow-[#B58D53]/30"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+            />
+          </div>
               </div>
+              
               <p className="text-[#FDF0C4]/60 max-w-2xl mx-auto">
                 7 nights of deep-dive sessions covering the full AI engineering lifecycle — from secure GenAI development to entrepreneurship.
               </p>
+              
             </div>
+            
           </AnimatedSection>
 
           <div className="space-y-8 max-w-5xl mx-auto">
@@ -959,16 +983,31 @@ export default function Home() {
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <img src="/images/decorations/star.png" alt="" className="w-8 h-8 opacity-60" />
+                {/* <img src="/images/icons/robot-qatayef.png" alt="" className="w-12 h-12 rounded-full ring-2 ring-[#B58D53]/40 object-cover" /> */}
+                
                 <h2 className="text-4xl md:text-5xl font-bold text-[#FDF0C4]">
                   Register Now
                 </h2>
-                <img src="/images/decorations/star.png" alt="" className="w-8 h-8 opacity-60" />
+                              <div className="flex items-center justify-center gap-3 md:gap-5">
+            <motion.img
+              src="/images/icons/robot-lantern.png"
+              alt=""
+              className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full ring-2 ring-[#B58D53]/50 shadow-lg shadow-[#B58D53]/30"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+            />
+          </div>
+                {/* <img src="/images/icons/robot-qatayef.png" alt="" className="w-12 h-12 rounded-full ring-2 ring-[#B58D53]/40 object-cover" /> */}
+              
               </div>
+
+              
               <p className="text-[#FDF0C4]/70 max-w-xl mx-auto">
                 Secure your spot at QatAIyef: AI Engineering Nights. Free registration, limited seats.
               </p>
             </div>
+            
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
@@ -1132,7 +1171,9 @@ export default function Home() {
             </div>
           </AnimatedSection>
         </div>
+      
       </section>
+      
 
       {/* ═══════════════════ PARTNERSHIPS SECTION ═══════════════════ */}
       <section id="partnerships" className="py-20 bg-[#2A0F0F] relative overflow-hidden">
