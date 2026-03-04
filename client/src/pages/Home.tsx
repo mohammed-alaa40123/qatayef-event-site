@@ -41,9 +41,9 @@ const schedule: DaySchedule[] = [
   {
     day: 1,
     date: "March 8, 2026",
-    title: "Build a Secure GenAI App",
+    title: "Build an Impactful GenAI App",
     description:
-      "From Idea to Production — Learn modern GenAI application architecture, internal data flows, and security best practices to build robust AI products.",
+      "From Idea to Impact — Learn modern GenAI application architecture, internal data flows, and best practices to build impactful AI products.",
     speakers: [
       {
         name: "Bady Ammar",
