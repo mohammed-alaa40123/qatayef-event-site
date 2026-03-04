@@ -153,7 +153,7 @@ const schedule: DaySchedule[] = [
         country: "🇪🇬 Egypt",
         linkedinUrl: "https://aic.gov.eg/",
         imageUrl: "/images/speakers/wael-ali.jpeg",
-        isPending: true,
+        // isPending: true,
       },
     ],
     isPanel: true,
