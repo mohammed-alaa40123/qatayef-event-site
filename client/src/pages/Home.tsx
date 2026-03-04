@@ -132,7 +132,7 @@ const schedule: DaySchedule[] = [
     speakers: [
       {
         name: "Dr. Marwa El Hefnawy",
-        role: "AI and 5G/6G System Engineering Expert",
+        role: "5G/6G System Engineering Expert",
         company: "Apple, Intel, Huawei",
         country: "🇪🇬 Egypt",
         linkedinUrl: "https://www.linkedin.com/in/marwa-el-hefnawy-ph-d-06267373/",
@@ -152,7 +152,7 @@ const schedule: DaySchedule[] = [
         company: "Applied Innovation Center",
         country: "🇪🇬 Egypt",
         linkedinUrl: "https://aic.gov.eg/",
-        imageUrl: "/images/speakers/ayman-saber.jpg",
+        imageUrl: "/images/speakers/wael-ali.jpg",
         isPending: true,
       },
     ],
