@@ -726,23 +726,23 @@ export default function Home() {
                 </h2>
                 <img src="/images/decorations/star-ai.png" alt="" className="w-8 h-8 opacity-70" />
                 <div className="flex items-center justify-center gap-3 md:gap-5">
-            <motion.img
-              src="/images/icons/robot-qatayef.png"
-              alt=""
-              className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full ring-2 ring-[#B58D53]/50 shadow-lg shadow-[#B58D53]/30"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
-            />
-          </div>
+                  <motion.img
+                    src="/images/icons/robot-qatayef.png"
+                    alt=""
+                    className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full ring-2 ring-[#B58D53]/50 shadow-lg shadow-[#B58D53]/30"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+                  />
+                </div>
               </div>
-              
+
               <p className="text-[#FDF0C4]/60 max-w-2xl mx-auto">
                 7 nights of deep-dive sessions covering the full AI engineering lifecycle — from secure GenAI development to entrepreneurship.
               </p>
-              
+
             </div>
-            
+
           </AnimatedSection>
 
           <div className="space-y-8 max-w-5xl mx-auto">
@@ -984,30 +984,30 @@ export default function Home() {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
                 {/* <img src="/images/icons/robot-qatayef.png" alt="" className="w-12 h-12 rounded-full ring-2 ring-[#B58D53]/40 object-cover" /> */}
-                
+
                 <h2 className="text-4xl md:text-5xl font-bold text-[#FDF0C4]">
                   Register Now
                 </h2>
-                              <div className="flex items-center justify-center gap-3 md:gap-5">
-            <motion.img
-              src="/images/icons/robot-lantern.png"
-              alt=""
-              className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full ring-2 ring-[#B58D53]/50 shadow-lg shadow-[#B58D53]/30"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
-            />
-          </div>
+                <div className="flex items-center justify-center gap-3 md:gap-5">
+                  <motion.img
+                    src="/images/icons/robot-lantern.png"
+                    alt=""
+                    className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full ring-2 ring-[#B58D53]/50 shadow-lg shadow-[#B58D53]/30"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+                  />
+                </div>
                 {/* <img src="/images/icons/robot-qatayef.png" alt="" className="w-12 h-12 rounded-full ring-2 ring-[#B58D53]/40 object-cover" /> */}
-              
+
               </div>
 
-              
+
               <p className="text-[#FDF0C4]/70 max-w-xl mx-auto">
                 Secure your spot at QatAIyef: AI Engineering Nights. Free registration, limited seats.
               </p>
             </div>
-            
+
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
@@ -1171,9 +1171,9 @@ export default function Home() {
             </div>
           </AnimatedSection>
         </div>
-      
+
       </section>
-      
+
 
       {/* ═══════════════════ PARTNERSHIPS SECTION ═══════════════════ */}
       <section id="partnerships" className="py-20 bg-[#2A0F0F] relative overflow-hidden">
@@ -1184,58 +1184,192 @@ export default function Home() {
               <div className="flex items-center justify-center gap-3 mb-4">
                 <img src="/images/decorations/dec2.png" alt="" className="w-10 h-8 opacity-50" />
                 <h2 className="text-4xl md:text-5xl font-bold text-[#FDF0C4]">
-                  Partnerships
+                  Community Partners
                 </h2>
                 <img src="/images/decorations/dec2.png" alt="" className="w-10 h-8 opacity-50 scale-x-[-1]" />
               </div>
-              <p className="text-[#FDF0C4]/60 max-w-lg mx-auto text-lg">
-                Stay tuned for exciting partnership announcements! 🌟
+              <p className="text-[#FDF0C4]/60 max-w-2xl mx-auto text-base">
+                Proudly supported by IEEE Student Branches and tech communities across Egypt, Tunisia, and Jordan �
               </p>
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {/* IEEE */}
-              <Card className="p-8 bg-[#3D2317]/60 border border-[#B58D53]/15 hover:border-[#B58D53]/40 transition-all group backdrop-blur-sm">
-                <div className="flex flex-col items-center text-center">
-                  <img
-                    src="/images/brand/ieee-logo.jpg"
-                    alt="IEEE"
-                    className="h-20 object-contain mb-4 rounded group-hover:scale-105 transition-transform"
-                  />
-                  <h3 className="text-lg font-bold text-[#FDF0C4]">IEEE</h3>
-                  <p className="text-xs text-[#FDF0C4]/40 mt-1">EUI Student Branch</p>
-                </div>
-              </Card>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 max-w-6xl mx-auto">
+              {[
+                {
+                  name: "IEEE Sphinx SB",
+                  institution: "Sphinx University",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/sphinx.png",
+                  link: "https://www.facebook.com/IEEESphinx",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE Al al-BAYT SB",
+                  institution: "Al al-BAYT University",
+                  country: "Jordan",
+                  flag: "🇯🇴",
+                  logo: "/images/partners/albait.jpeg",
+                  link: "https://www.facebook.com/share/1KAcxTQqNo/",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE FSB SB",
+                  institution: "Faculty of Sciences of Bizerte",
+                  country: "Tunisia",
+                  flag: "🇹🇳",
+                  logo: "/images/partners/bizerte.png",
+                  link: "https://linktr.ee/IEEEHSB26",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE Helwan SB",
+                  institution: "Helwan University",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/helwan.png",
+                  link: "https://linktr.ee/ieee_buasb",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE BUA SB",
+                  institution: "Badr University",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/badr.png",
+                  link: "https://linktr.ee/ieee_buasb",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE PUA SB",
+                  institution: "Pharos University Alexandria",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/pharos.png",
+                  link: "https://hopp.bio/ieee-pua-sb",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "Giza Engineering Institution",
+                  institution: "Giza Engineering Institution",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/gei.jpg",
+                  link: "https://www.facebook.com/ieeegeisb",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "GDG on Campus CHI",
+                  institution: "Cairo Higher Institute",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/GDG-CHI - Eman Mekkawy.png",
+                  link: "https://direct.me/gdgoncampuschi",
+                  type: "Tech Community",
+                },
+                {
+                  name: "IEEE CS EJUST SBC",
+                  institution: "Egypt-Japan University of Science & Technology",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/CS E-JUST  - Mohab Ibrahim.png",
+                  link: "https://linktr.ee/ieee.cs.ejust.sbc",
+                  type: "IEEE SB Chapter",
+                },
+                {
+                  name: "IEEE ISET RADES SB",
+                  institution: "ISET Rades",
+                  country: "Tunisia",
+                  flag: "🇹🇳",
+                  logo: "/images/partners/LOGO IEEE ISET R - Nour Ben Jemaa.png",
+                  link: "https://www.instagram.com/ieee_isetrades_sb",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE Zewail City SB",
+                  institution: "Zewail City",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/zewail.png",
+                  link: "https://www.facebook.com/share/1CB1E47odN/",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE FSS SB",
+                  institution: "Faculty of Science, Sfax",
+                  country: "Tunisia",
+                  flag: "🇹🇳",
+                  logo: "/images/partners/sfax.png",
+                  link: "https://www.instagram.com/ieee.fss.sb",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE Modern Academy SB",
+                  institution: "Modern Academy for Engineering & Technology",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/modern.png",
+                  link: "https://www.facebook.com/share/18A2VmJ5NB/",
+                  type: "Student Activity",
+                },
+              ].map((partner, i) => (
+                <AnimatedSection key={i} delay={i * 0.05}>
+                  <a
+                    href={partner.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group relative rounded-2xl bg-[#3D2317]/60 border border-[#B58D53]/15 hover:border-[#B58D53]/50 hover:bg-[#3D2317]/90 transition-all duration-300 hover:shadow-xl hover:shadow-[#B58D53]/10 hover:-translate-y-1 backdrop-blur-sm overflow-hidden h-full"
+                  >
+                    {/* Country flag badge */}
+                    <div className="absolute top-2.5 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1 bg-[#2A0F0F]/80 backdrop-blur-sm border border-[#B58D53]/30 rounded-full px-2.5 py-0.5 shadow-md">
+                      <span className="text-base leading-none">{partner.flag}</span>
+                      <span className="text-[10px] font-semibold text-[#B58D53] uppercase tracking-wide">{partner.country}</span>
+                    </div>
 
-              {/* IEEE Computer Society */}
-              <Card className="p-8 bg-[#3D2317]/60 border border-[#B58D53]/15 hover:border-[#B58D53]/40 transition-all group backdrop-blur-sm">
-                <div className="flex flex-col items-center text-center">
-                  <img
-                    src="/images/brand/ieee-cs-eui.png"
-                    alt="IEEE Computer Society"
-                    className="h-20 object-contain mb-4 rounded group-hover:scale-105 transition-transform"
-                  />
-                  <h3 className="text-lg font-bold text-[#FDF0C4]">IEEE Computer Society</h3>
-                  <p className="text-xs text-[#FDF0C4]/40 mt-1">EUI Chapter</p>
-                </div>
-              </Card>
+                    {/* Logo area */}
+                    <div className="flex items-center justify-center pt-10 pb-3 px-4 min-h-[100px]">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="max-h-16 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    </div>
 
-              {/* More Coming */}
-              <Card className="p-8 bg-[#3D2317]/60 border-2 border-dashed border-[#B58D53]/20 hover:border-[#B58D53]/40 transition-all group backdrop-blur-sm">
-                <div className="flex flex-col items-center justify-center text-center h-full">
+                    {/* Info */}
+                    <div className="px-3 pb-4 text-center">
+                      <p className="text-xs font-bold text-[#FDF0C4] group-hover:text-[#B58D53] transition-colors leading-tight line-clamp-2">
+                        {partner.name}
+                      </p>
+                      <p className="text-[10px] text-[#FDF0C4]/35 mt-0.5 leading-tight line-clamp-2">
+                        {partner.institution}
+                      </p>
+                      <span className="inline-block mt-1.5 text-[9px] bg-[#B58D53]/10 border border-[#B58D53]/20 text-[#B58D53]/70 rounded-full px-2 py-0.5 uppercase tracking-wide">
+                        {partner.type}
+                      </span>
+                    </div>
+                  </a>
+                </AnimatedSection>
+              ))}
+
+              {/* More Coming Soon */}
+              <AnimatedSection delay={0.7}>
+                <div className="rounded-2xl bg-[#3D2317]/40 border-2 border-dashed border-[#B58D53]/20 hover:border-[#B58D53]/40 transition-all duration-300 flex flex-col items-center justify-center text-center p-5 h-full min-h-[180px]">
                   <motion.div
                     animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="text-4xl mb-4"
+                    className="text-3xl mb-3"
                   >
                     ✨
                   </motion.div>
-                  <h3 className="text-lg font-bold text-[#B58D53]">More Coming Soon</h3>
-                  <p className="text-xs text-[#FDF0C4]/40 mt-1">Stay tuned!</p>
+                  <p className="text-sm font-bold text-[#B58D53]">More Coming Soon</p>
+                  <p className="text-[10px] text-[#FDF0C4]/30 mt-0.5">Stay tuned!</p>
                 </div>
-              </Card>
+              </AnimatedSection>
             </div>
           </AnimatedSection>
         </div>
