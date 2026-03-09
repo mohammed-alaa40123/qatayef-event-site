@@ -1198,15 +1198,14 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 max-w-6xl mx-auto">
               {[
                 {
-                  name: "IEEE Computational Intelligence Society-Egypt Chapter",
-                  institution: "",
+                  name: "IEEE Computational Intelligence Society",
+                  institution: "Egypt Chapter",
                   country: "Egypt",
                   flag: "🇪🇬",
                   logo: "/images/partners/IEE CIS WHITE.png",
                   link: "https://www.facebook.com/ieeebfci/",
                   type: "IEEE Society Chapter",
                 },
-
                 {
                   name: "IEEE Zewail City SB",
                   institution: "Zewail City",
