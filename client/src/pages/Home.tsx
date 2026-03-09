@@ -92,7 +92,7 @@ const schedule: DaySchedule[] = [
   {
     day: 4,
     date: "March 11, 2026",
-    title: "Agentic AI, Tools, MCPs",
+    title: "Build AI Agents using Google ADK",
     description:
       "Beyond Chatbots — Discover how AI agents engage in multi-step reasoning, integrate external tools, and orchestrate complex workflows.",
     speakers: [
@@ -1189,7 +1189,7 @@ export default function Home() {
                 <img src="/images/decorations/dec2.png" alt="" className="w-10 h-8 opacity-50 scale-x-[-1]" />
               </div>
               <p className="text-[#FDF0C4]/60 max-w-2xl mx-auto text-base">
-                Proudly supported by IEEE Student Branches and tech communities across Egypt, Tunisia, and Jordan �
+                Proudly supported by IEEE Student Branches and tech communities across Egypt, Tunisia, and Jordan 🌟
               </p>
             </div>
           </AnimatedSection>
@@ -1198,95 +1198,15 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 max-w-6xl mx-auto">
               {[
                 {
-                  name: "IEEE Sphinx SB",
-                  institution: "Sphinx University",
+                  name: "IEEE Zewail City SB",
+                  institution: "Zewail City",
                   country: "Egypt",
                   flag: "🇪🇬",
-                  logo: "/images/partners/sphinx.png",
-                  link: "https://www.facebook.com/IEEESphinx",
+                  logo: "/images/partners/IEE CIS WHITE.png",
+                  link: "https://www.facebook.com/share/1CB1E47odN/",
                   type: "IEEE Student Branch",
                 },
-                {
-                  name: "IEEE Al al-BAYT SB",
-                  institution: "Al al-BAYT University",
-                  country: "Jordan",
-                  flag: "🇯🇴",
-                  logo: "/images/partners/albait.jpeg",
-                  link: "https://www.facebook.com/share/1KAcxTQqNo/",
-                  type: "IEEE Student Branch",
-                },
-                {
-                  name: "IEEE FSB SB",
-                  institution: "Faculty of Sciences of Bizerte",
-                  country: "Tunisia",
-                  flag: "🇹🇳",
-                  logo: "/images/partners/bizerte.png",
-                  link: "https://linktr.ee/IEEEHSB26",
-                  type: "IEEE Student Branch",
-                },
-                {
-                  name: "IEEE Helwan SB",
-                  institution: "Helwan University",
-                  country: "Egypt",
-                  flag: "🇪🇬",
-                  logo: "/images/partners/helwan.png",
-                  link: "https://linktr.ee/ieee_buasb",
-                  type: "IEEE Student Branch",
-                },
-                {
-                  name: "IEEE BUA SB",
-                  institution: "Badr University",
-                  country: "Egypt",
-                  flag: "🇪🇬",
-                  logo: "/images/partners/badr.png",
-                  link: "https://linktr.ee/ieee_buasb",
-                  type: "IEEE Student Branch",
-                },
-                {
-                  name: "IEEE PUA SB",
-                  institution: "Pharos University Alexandria",
-                  country: "Egypt",
-                  flag: "🇪🇬",
-                  logo: "/images/partners/pharos.png",
-                  link: "https://hopp.bio/ieee-pua-sb",
-                  type: "IEEE Student Branch",
-                },
-                {
-                  name: "Giza Engineering Institution",
-                  institution: "Giza Engineering Institution",
-                  country: "Egypt",
-                  flag: "🇪🇬",
-                  logo: "/images/partners/gei.jpg",
-                  link: "https://www.facebook.com/ieeegeisb",
-                  type: "IEEE Student Branch",
-                },
-                {
-                  name: "GDG on Campus CHI",
-                  institution: "Cairo Higher Institute",
-                  country: "Egypt",
-                  flag: "🇪🇬",
-                  logo: "/images/partners/GDG-CHI - Eman Mekkawy.png",
-                  link: "https://direct.me/gdgoncampuschi",
-                  type: "Tech Community",
-                },
-                {
-                  name: "IEEE CS EJUST SBC",
-                  institution: "Egypt-Japan University of Science & Technology",
-                  country: "Egypt",
-                  flag: "🇪🇬",
-                  logo: "/images/partners/CS E-JUST  - Mohab Ibrahim.png",
-                  link: "https://linktr.ee/ieee.cs.ejust.sbc",
-                  type: "IEEE SB Chapter",
-                },
-                {
-                  name: "IEEE ISET RADES SB",
-                  institution: "ISET Rades",
-                  country: "Tunisia",
-                  flag: "🇹🇳",
-                  logo: "/images/partners/LOGO IEEE ISET R - Nour Ben Jemaa.png",
-                  link: "https://www.instagram.com/ieee_isetrades_sb",
-                  type: "IEEE Student Branch",
-                },
+
                 {
                   name: "IEEE Zewail City SB",
                   institution: "Zewail City",
@@ -1294,6 +1214,33 @@ export default function Home() {
                   flag: "🇪🇬",
                   logo: "/images/partners/zewail.png",
                   link: "https://www.facebook.com/share/1CB1E47odN/",
+                  type: "IEEE Student Branch",
+                },
+                // {
+                //   name: "IEEE Helwan SB",
+                //   institution: "Helwan University",
+                //   country: "Egypt",
+                //   flag: "🇪🇬",
+                //   logo: "/images/partners/helwan.png",
+                //   link: "https://linktr.ee/IEEEHSB26",
+                //   type: "IEEE Student Branch",
+                // },
+                {
+                  name: "IEEE Modern Academy SB",
+                  institution: "Modern Academy for Engineering & Technology",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/modern.png",
+                  link: "https://www.facebook.com/share/18A2VmJ5NB/",
+                  type: "Student Activity",
+                },
+                {
+                  name: "IEEE FSB SB",
+                  institution: "Faculty of Sciences of Bizerte",
+                  country: "Tunisia",
+                  flag: "🇹🇳",
+                  logo: "/images/partners/bizerte.png",
+                  link: "https://www.facebook.com/share/1KAcxTQqNo/",
                   type: "IEEE Student Branch",
                 },
                 {
@@ -1305,15 +1252,83 @@ export default function Home() {
                   link: "https://www.instagram.com/ieee.fss.sb",
                   type: "IEEE Student Branch",
                 },
+                // {
+                //   name: "IEEE CS EJUST SBC",
+                //   institution: "Egypt-Japan University of Science & Technology",
+                //   country: "Egypt",
+                //   flag: "🇪🇬",
+                //   logo: "/images/partners/CS E-JUST  - Mohab Ibrahim.png",
+                //   link: "https://linktr.ee/ieee.cs.ejust.sbc",
+                //   type: "IEEE SB Chapter",
+                // },
+                // {
+                //   name: "IEEE Al al-BAYT SB",
+                //   institution: "Al al-BAYT University",
+                //   country: "Jordan",
+                //   flag: "🇯🇴",
+                //   logo: "/images/partners/albait.jpeg",
+                //   link: "https://www.instagram.com/ieee.aabu/",
+                //   type: "IEEE Student Branch",
+                // },
+                
+                // {
+                //   name: "IEEE ISET RADES SB",
+                //   institution: "ISET Rades",
+                //   country: "Tunisia",
+                //   flag: "🇹🇳",
+                //   logo: "/images/partners/LOGO IEEE ISET R - Nour Ben Jemaa.png",
+                //   link: "https://www.instagram.com/ieee_isetrades_sb",
+                //   type: "IEEE Student Branch",
+                // },
+
                 {
-                  name: "IEEE Modern Academy SB",
-                  institution: "Modern Academy for Engineering & Technology",
+                  name: "IEEE BUA SB",
+                  institution: "Badr University",
                   country: "Egypt",
                   flag: "🇪🇬",
-                  logo: "/images/partners/modern.png",
-                  link: "https://www.facebook.com/share/18A2VmJ5NB/",
-                  type: "Student Activity",
+                  logo: "/images/partners/badr.png",
+                  link: "https://linktr.ee/ieee_buasb",
+                  type: "IEEE Student Branch",
                 },
+                
+                {
+                  name: "IEEE PUA SB",
+                  institution: "Pharos University Alexandria",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/pharos.png",
+                  link: "https://hopp.bio/ieee-pua-sb",
+                  type: "IEEE Student Branch",
+                },
+                {
+                  name: "IEEE Sphinx SB",
+                  institution: "Sphinx University",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/sphinx.png",
+                  link: "https://www.facebook.com/IEEESphinx",
+                  type: "IEEE Student Branch",
+                },
+                
+                {
+                  name: "GDG on Campus CHI",
+                  institution: "Cairo Higher Institute",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/GDG-CHI - Eman Mekkawy.png",
+                  link: "https://direct.me/gdgoncampuschi",
+                  type: "Tech Community",
+                },
+                {
+                  name: "Giza Engineering Institution",
+                  institution: "Giza Engineering Institution",
+                  country: "Egypt",
+                  flag: "🇪🇬",
+                  logo: "/images/partners/gei.jpg",
+                  link: "https://www.facebook.com/ieeegeisb",
+                  type: "IEEE Student Branch",
+                },
+                
               ].map((partner, i) => (
                 <AnimatedSection key={i} delay={i * 0.05}>
                   <a
@@ -1329,11 +1344,11 @@ export default function Home() {
                     </div>
 
                     {/* Logo area */}
-                    <div className="flex items-center justify-center pt-10 pb-3 px-4 min-h-[100px]">
+                    <div className="flex items-center justify-center pt-10 pb-3 px-4 min-h-[120px]">
                       <img
                         src={partner.logo}
                         alt={partner.name}
-                        className="max-h-16 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        className="max-h-24 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                         onError={(e) => {
                           (e.target as HTMLImageElement).style.display = "none";
                         }}
