@@ -35,6 +35,8 @@ interface DaySchedule {
   description: string;
   speakers: Speaker[];
   isPanel?: boolean;
+  recordingUrl?: string; // e.g. YouTube
+  materialsUrl?: string; // e.g. Google Drive
 }
 
 const schedule: DaySchedule[] = [
@@ -54,6 +56,7 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/bady-ammar.jpg",
       },
     ],
+    recordingUrl: "https://youtu.be/xgrooQa_mqE",
   },
   {
     day: 2,
@@ -71,6 +74,7 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/omar-nj.jpg",
       },
     ],
+    materialsUrl: "https://drive.google.com/drive/folders/1s_hOaCxm8PjowM1oJgc--VEvgA7tpZC2?usp=drive_link",
   },
   {
     day: 3,
@@ -133,8 +137,8 @@ const schedule: DaySchedule[] = [
       {
         name: "Dr. Marwa El Hefnawy",
         role: "5G/6G System Engineering Expert",
-        company: "Apple, Intel, Huawei",
-        country: "🇪🇬 Egypt",
+        company: "Apple, Huawei",
+        country: "🇩🇪 Germany",
         linkedinUrl: "https://www.linkedin.com/in/marwa-el-hefnawy-ph-d-06267373/",
         imageUrl: "/images/speakers/marwa-el-hefnawy.jpg",
       },
@@ -156,12 +160,12 @@ const schedule: DaySchedule[] = [
         // isPending: true,
       },
       {
-        name: "Dr. Wael Ali",
-        role: "R&D NLP Lead",
-        company: "Applied Innovation Center (MCIT)",
-        country: "🇪🇬 Egypt",
-        linkedinUrl: "https://aic.gov.eg/",
-        imageUrl: "/images/speakers/wael-ali.jpeg",
+        name: "Youssef Hosni",
+        role: "Founder To Data & Beyond | PhD & Generative AI Researcher",
+        company: "Aalto University",
+        country: "🇫🇮 Finland",
+        linkedinUrl: "https://www.linkedin.com/in/youssef-hosni-b2960b135/",
+        imageUrl: "/images/speakers/youssef-hosni.jpeg",
         // isPending: true,
       },
     ],
@@ -775,6 +779,15 @@ export default function Home() {
                           <Users className="w-3.5 h-3.5" />
                           Panel Discussion
                         </span>
+                        <div className="flex items-center gap-2.5 text-xs text-[#FDF0C4]/80 ml-1">
+                          <span className="flex items-center gap-1"> 🌍 {daySchedule.day === 2 || daySchedule.day === 4 ? "7:30 PM" : "7:00 PM"} GMT</span>
+                          <span className="text-[#B58D53]/50">•</span>
+                          <span className="flex items-center gap-1">🇹🇳 {daySchedule.day === 2 || daySchedule.day === 4 ? "8:30 PM" : "8:00 PM"}</span>
+                          <span className="text-[#B58D53]/50">•</span>
+                          <span className="flex items-center gap-1">🇪🇬 {daySchedule.day === 2 || daySchedule.day === 4 ? "9:30 PM" : "9:00 PM"}</span>
+                          <span className="text-[#B58D53]/50">•</span>
+                          <span className="flex items-center gap-1">🇸🇦 {daySchedule.day === 2 || daySchedule.day === 4 ? "10:30 PM" : "10:00 PM"}</span>
+                        </div>
                       </div>
 
                       <h3 className="text-2xl md:text-3xl font-bold text-[#FDF0C4] mb-3 group-hover:text-[#B58D53] transition-colors">
@@ -830,12 +843,49 @@ export default function Home() {
                               Night {daySchedule.day}
                             </span>
                             <span className="text-[#B58D53]/80 text-sm">{daySchedule.date}</span>
+                            <div className="flex items-center gap-2.5 text-xs text-[#FDF0C4]/80 ml-1">
+                              <span className="flex items-center gap-1">🌍{daySchedule.day === 2 || daySchedule.day === 4 ? "7:30 PM" : "7:00 PM"} GMT</span>
+                              <span className="text-[#B58D53]/50">•</span>
+                              <span className="flex items-center gap-1">🇹🇳 {daySchedule.day === 2 || daySchedule.day === 4 ? "8:30 PM" : "8:00 PM"}</span>
+                              <span className="text-[#B58D53]/50">•</span>
+                              <span className="flex items-center gap-1">🇪🇬 {daySchedule.day === 2 || daySchedule.day === 4 ? "9:30 PM" : "9:00 PM"}</span>
+                              <span className="text-[#B58D53]/50">•</span>
+                              <span className="flex items-center gap-1">🇸🇦 {daySchedule.day === 2 || daySchedule.day === 4 ? "10:30 PM" : "10:00 PM"}</span>
+                            </div>
                           </div>
 
                           <h3 className="text-xl md:text-2xl font-bold text-[#FDF0C4] mb-2 group-hover:text-[#B58D53] transition-colors">
                             {daySchedule.title}
                           </h3>
                           <p className="text-[#FDF0C4]/60 text-sm mb-4 leading-relaxed">{daySchedule.description}</p>
+
+                          {/* Quick Links for recording/materials */}
+                          {(daySchedule.recordingUrl || daySchedule.materialsUrl) && (
+                            <div className="flex flex-wrap gap-3 mb-4">
+                              {daySchedule.recordingUrl && (
+                                <a
+                                  href={daySchedule.recordingUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#B58D53]/10 hover:bg-[#B58D53]/20 border border-[#B58D53]/30 rounded-lg text-xs font-semibold text-[#FDF0C4] transition-colors"
+                                >
+                                  <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M9.667,14.714V9.286L15.333,12L9.667,14.714z" /></svg>
+                                  Watch Recording
+                                </a>
+                              )}
+                              {daySchedule.materialsUrl && (
+                                <a
+                                  href={daySchedule.materialsUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#B58D53]/10 hover:bg-[#B58D53]/20 border border-[#B58D53]/30 rounded-lg text-xs font-semibold text-[#FDF0C4] transition-colors"
+                                >
+                                  <svg className="w-4 h-4 text-[#B58D53]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                  Session Materials
+                                </a>
+                              )}
+                            </div>
+                          )}
 
                           {/* Speaker info */}
                           <div className="flex flex-wrap gap-4">
@@ -1278,7 +1328,7 @@ export default function Home() {
                 //   link: "https://www.instagram.com/ieee.aabu/",
                 //   type: "IEEE Student Branch",
                 // },
-                
+
                 // {
                 //   name: "IEEE ISET RADES SB",
                 //   institution: "ISET Rades",
@@ -1298,7 +1348,7 @@ export default function Home() {
                   link: "https://linktr.ee/ieee_buasb",
                   type: "IEEE Student Branch",
                 },
-                
+
                 {
                   name: "IEEE PUA SB",
                   institution: "Pharos University Alexandria",
@@ -1317,7 +1367,7 @@ export default function Home() {
                   link: "https://www.facebook.com/IEEESphinx",
                   type: "IEEE Student Branch",
                 },
-                
+
                 {
                   name: "GDG on Campus CHI",
                   institution: "Cairo Higher Institute",
@@ -1336,7 +1386,7 @@ export default function Home() {
                   link: "https://www.facebook.com/ieeegeisb",
                   type: "IEEE Student Branch",
                 },
-                
+
               ].map((partner, i) => (
                 <AnimatedSection key={i} delay={i * 0.05}>
                   <a
