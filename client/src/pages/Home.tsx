@@ -183,7 +183,7 @@ const schedule: DaySchedule[] = [
         role: "VP of Artificial Intelligence",
         company: "Keheilan",
         country: "🇪🇬 Egypt",
-        linkedinUrl: "https://eg.linkedin.com/in/amany-h-b-eissa-a9108b52",
+        linkedinUrl: "https://www.linkedin.com/in/amani-eissa/",
         imageUrl: "/images/speakers/amani-eissa.jpg",
       },
       {
