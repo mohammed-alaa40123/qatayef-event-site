@@ -74,6 +74,7 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/omar-nj.jpg",
       },
     ],
+    recordingUrl: "https://youtu.be/Nzg1GS1Yhtg",
     materialsUrl: "https://drive.google.com/drive/folders/1s_hOaCxm8PjowM1oJgc--VEvgA7tpZC2?usp=drive_link",
   },
   {
@@ -92,6 +93,8 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/hany-saad.jpg",
       },
     ],
+    materialsUrl: "https://deploy-ai-apps.lovable.app/",
+
   },
   {
     day: 4,
