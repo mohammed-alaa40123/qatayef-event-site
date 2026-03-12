@@ -94,6 +94,7 @@ const schedule: DaySchedule[] = [
       },
     ],
     materialsUrl: "https://deploy-ai-apps.lovable.app/",
+    recordingUrl:"https://youtu.be/n_s0fb_KPkA?si=y3_wm6x-KlOQj1to"
 
   },
   {
@@ -112,6 +113,8 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/ayman-mostafa.jpg",
       },
     ],
+    recordingUrl: "https://youtu.be/EiiJAYpFI_g",
+    // materialsUrl: "https://drive.google.com/drive/folders/1s_hOaCxm8PjowM1oJgc--VEvgA7tpZC2?usp=drive_link",
   },
   {
     day: 5,
@@ -204,6 +207,14 @@ const schedule: DaySchedule[] = [
         country: "🇪🇬 Egypt",
         linkedinUrl: "https://www.linkedin.com/in/mo-fattah-bb1234160",
         imageUrl: "/images/speakers/mo-fattah.jpg",
+      },
+      {
+        name: "Beshoy Michel",
+        role: "Founder & CEO",
+        company: "Bub AI",
+        country: "🇪🇬 Egypt",
+        linkedinUrl: "https://www.linkedin.com/in/bishoy-michel-45a44625b/",
+        imageUrl: "/images/speakers/bishoy-michel.jpeg",
       },
     ],
     isPanel: true,
@@ -799,7 +810,7 @@ export default function Home() {
                       <p className="text-[#FDF0C4]/60 text-sm mb-8 leading-relaxed max-w-3xl">{daySchedule.description}</p>
 
                       {/* Panel speakers grid */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         {daySchedule.speakers.map((speaker, si) => (
                           <a
                             key={si}
