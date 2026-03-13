@@ -210,8 +210,8 @@ const schedule: DaySchedule[] = [
       },
       {
         name: "Beshoy Michel",
-        role: "Founder & CEO",
-        company: "Bub AI",
+        role: "Co-Founder & COO",
+        company: "ScribeMe",
         country: "🇪🇬 Egypt",
         linkedinUrl: "https://www.linkedin.com/in/bishoy-michel-45a44625b/",
         imageUrl: "/images/speakers/bishoy-michel.jpeg",
