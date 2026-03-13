@@ -114,7 +114,7 @@ const schedule: DaySchedule[] = [
       },
     ],
     recordingUrl: "https://youtu.be/EiiJAYpFI_g",
-    // materialsUrl: "https://drive.google.com/drive/folders/1s_hOaCxm8PjowM1oJgc--VEvgA7tpZC2?usp=drive_link",
+    materialsUrl: "https://github.com/ayman3000/google-adk-projects",
   },
   {
     day: 5,
@@ -132,6 +132,8 @@ const schedule: DaySchedule[] = [
         imageUrl: "/images/speakers/fam-louiz.jpg",
       },
     ],
+    recordingUrl: "https://www.youtube.com/watch?v=60vhVfGuNDw",
+    materialsUrl: "https://docs.google.com/presentation/d/1AbntLvX61OKgH4qxmKBW2BW_eKMW5XMS/edit?usp=sharing&ouid=107576576622790078252&rtpof=true&sd=true",
   },
   {
     day: 6,
