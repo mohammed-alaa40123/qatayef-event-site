@@ -796,13 +796,13 @@ export default function Home() {
                           Panel Discussion
                         </span>
                         <div className="flex items-center gap-2.5 text-xs text-[#FDF0C4]/80 ml-1">
-                          <span className="flex items-center gap-1"> 🌍 {daySchedule.day === 2 || daySchedule.day === 4 ? "7:30 PM" : "7:00 PM"} GMT</span>
+                          <span className="flex items-center gap-1"> 🌍 {daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "7:30 PM" : "7:00 PM"} GMT</span>
                           <span className="text-[#B58D53]/50">•</span>
-                          <span className="flex items-center gap-1">🇹🇳 {daySchedule.day === 2 || daySchedule.day === 4 ? "8:30 PM" : "8:00 PM"}</span>
+                          <span className="flex items-center gap-1">🇹🇳 {daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "8:30 PM" : "8:00 PM"}</span>
                           <span className="text-[#B58D53]/50">•</span>
-                          <span className="flex items-center gap-1">🇪🇬 {daySchedule.day === 2 || daySchedule.day === 4 ? "9:30 PM" : "9:00 PM"}</span>
+                          <span className="flex items-center gap-1">🇪🇬 {daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "9:30 PM" : "9:00 PM"}</span>
                           <span className="text-[#B58D53]/50">•</span>
-                          <span className="flex items-center gap-1">🇸🇦 {daySchedule.day === 2 || daySchedule.day === 4 ? "10:30 PM" : "10:00 PM"}</span>
+                          <span className="flex items-center gap-1">🇸🇦 {daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "10:30 PM" : "10:00 PM"}</span>
                         </div>
                       </div>
 
@@ -860,13 +860,13 @@ export default function Home() {
                             </span>
                             <span className="text-[#B58D53]/80 text-sm">{daySchedule.date}</span>
                             <div className="flex items-center gap-2.5 text-xs text-[#FDF0C4]/80 ml-1">
-                              <span className="flex items-center gap-1">🌍{daySchedule.day === 2 || daySchedule.day === 4 ? "7:30 PM" : "7:00 PM"} GMT</span>
+                              <span className="flex items-center gap-1">🌍{daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "7:30 PM" : "7:00 PM"} GMT</span>
                               <span className="text-[#B58D53]/50">•</span>
-                              <span className="flex items-center gap-1">🇹🇳 {daySchedule.day === 2 || daySchedule.day === 4 ? "8:30 PM" : "8:00 PM"}</span>
+                              <span className="flex items-center gap-1">🇹🇳 {daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "8:30 PM" : "8:00 PM"}</span>
                               <span className="text-[#B58D53]/50">•</span>
-                              <span className="flex items-center gap-1">🇪🇬 {daySchedule.day === 2 || daySchedule.day === 4 ? "9:30 PM" : "9:00 PM"}</span>
+                              <span className="flex items-center gap-1">🇪🇬 {daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "9:30 PM" : "9:00 PM"}</span>
                               <span className="text-[#B58D53]/50">•</span>
-                              <span className="flex items-center gap-1">🇸🇦 {daySchedule.day === 2 || daySchedule.day === 4 ? "10:30 PM" : "10:00 PM"}</span>
+                              <span className="flex items-center gap-1">🇸🇦 {daySchedule.day === 2 || daySchedule.day === 4 || daySchedule.day === 7 ? "10:30 PM" : "10:00 PM"}</span>
                             </div>
                           </div>
 
